@@ -6,4 +6,5 @@ class Menu < ApplicationRecord
   validates :description, presence: true, uniqueness: true
   validates :price, presence:true, numericality: true
   validates_numericality_of :price, :greater_than => 0.01
+  validates_length_of :description, :maximum => 150
 end

@@ -4,6 +4,7 @@ class MenusController < ApplicationController
   # GET /menus or /menus.json
   def index
     @menus = Menu.all
+    @categories = Category.all
   end
 
   # GET /menus/1 or /menus/1.json
@@ -13,6 +14,7 @@ class MenusController < ApplicationController
   # GET /menus/new
   def new
     @menu = Menu.new
+    
   end
 
   # GET /menus/1/edit
@@ -56,7 +58,7 @@ class MenusController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_menu
@@ -65,6 +67,8 @@ class MenusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def menu_params
-      params.require(:menu).permit(:name, :price, :description)
+      params.require(:menu).permit(:name, :price, :description, :category_id)
     end
+
 end
+
