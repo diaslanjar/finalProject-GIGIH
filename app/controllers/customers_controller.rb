@@ -4,6 +4,7 @@ class CustomersController < ApplicationController
   # GET /customers or /customers.json
   def index
     @customers = Customer.all
+    @orders = Order.all
   end
 
   # GET /customers/1 or /customers/1.json
@@ -25,7 +26,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully created." }
+        format.html { redirect_to new_order_path, notice: "Customer was successfully created." }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new, status: :unprocessable_entity }

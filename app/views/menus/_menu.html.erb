@@ -1,23 +1,27 @@
-<div id="<%= dom_id menu %>">
+<div class="container">
+  <div id="<%= dom_id menu %>">
 
-  <p>
-    <strong>Category:</strong>
+  <div class="card text-center">
+  <div class="card-header">
     <%= menu.category.name %>
-  </p>
-  
-  <p>
-    <strong>Name:</strong>
-    <%= menu.name %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= menu.price %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= menu.description %>
-  </p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= menu.name %></h5>
+    <p class="card-text">Rp. <%= menu.price %></p>
+    <p class="card-text"><%= menu.description %></p>
+    <div class="d-flex justify-content-center">
+      <div style="padding: 0 5px;">
+        <%= link_to "Back", menus_path, :class => "btn btn-primary" %>
+      </div>
+      <div style="padding: 0 5px;">
+        <%= link_to "Edit", edit_menu_path(@menu), :class => "btn btn-warning" %>
+      </div>
+      <div style="padding: 0 5px;">
+        <%= button_to "Delete", @menu, method: :delete, :class => "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
     
+  </div>
 </div>

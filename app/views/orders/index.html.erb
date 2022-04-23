@@ -1,14 +1,47 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+<p style="color: green" class="mt-3"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1 style="text-align:center;">Orders</h1>
 
-<div id="orders">
-  <% @orders.each do |order| %>
-    <%= render order %>
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
-  <% end %>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Menu</th>
+      <th>Quantity</th>
+      <th>Order Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>     
+      <td>
+          <%= order.customer.name %>       
+      </td>
+      <td>
+          <%= order.menu.name %>       
+      </td>  
+      <td>
+          <%= order.quantity %>       
+      </td>
+      <td>
+          <%= order.order_date %>       
+      </td>
+      <td>
+          <%= order.status %>       
+      </td>  
+      <td>
+          <%= link_to "Show this order", order %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<div style="text-align:center;">
+  <%= link_to "New Order", new_order_path, :class => "btn btn-primary" %>
 </div>
-
-<%= link_to "New order", new_order_path %>
+</div>
