@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: customer) do |form| %>
   <% if customer.errors.any? %>
     <div style="color: red">
@@ -21,7 +22,9 @@
     <%= form.text_field :email %>
   </div>
 
+  <br>
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+</div>

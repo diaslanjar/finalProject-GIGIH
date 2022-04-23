@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -16,7 +17,9 @@
     <%= form.text_field :name %>
   </div>
 
+  <br>
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+</div>

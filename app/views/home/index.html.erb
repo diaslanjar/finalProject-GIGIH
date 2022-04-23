@@ -1,3 +1,54 @@
-<div style="padding: 0 5px;">
-  <%= link_to "menu", menus_path, :class => "btn btn-primary" %>
+<div class="container mt-4">
+  <h1 style="text-align:center;">Selamat Datang di<br>3G Resto</h1><br>
+
+  <h2 class="display-5">Apa itu 3G Resto?</h2>
+  <p class="lead">Bisnis makanan dan minuman yang didirikan oleh Pak Gagah, Bu Guguh, dan anaknya Gigih. Mereka mendirikan bisnis ini untuk mempermudah pelanggan dalam memesan makanan dari 3G Resto. Aplikasi ini dibuat secara sederhana dengan mengutamakan kemudahan bagi para pelanggan.</p>
+  <hr class="my-4">
+  <p>Silahkan melakukan kegiatan dengan klik salah satu tombol di bawah ini.</p>
+
+  <div class="d-flex justify-content-start">
+    <div style="padding: 0 5px;">
+      <%= link_to "Menu", menus_path, :class => "btn btn-primary" %>
+    </div>
+    <div style="padding: 0 5px;">
+      <%= link_to "List Orders", orders_path, :class => "btn btn-primary" %>
+    </div>
+    <div style="padding: 0 5px;">
+      <%= link_to "Categories", categories_path, :class => "btn btn-primary" %>
+    </div>
+    <div style="padding: 0 5px;">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Revenue
+      </button>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Daily Report</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <table>
+            <tbody>
+              <% @customers.each do |customer| %>
+              <tr>      
+                <td>      
+                <%= customer.name %> (<%= customer.email %>)     
+                </td>
+                <td>=> Total: Rp. </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

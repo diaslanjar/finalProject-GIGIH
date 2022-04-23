@@ -1,9 +1,11 @@
-<h1>New customer</h1>
+<div class="container">
+  <h1 style="text-align:center;" class="mt-3">New Customer</h1>
+  
+  <%= render "form", customer: @customer %>
 
-<%= render "form", customer: @customer %>
+  <br>
 
-<br>
-
-<div>
-  <%= link_to "Back", customers_path %>
+  <div style="text-align:center;">
+    <%= link_to "Back", customers_path, :class => "btn btn-primary" %>
+  </div>
 </div>

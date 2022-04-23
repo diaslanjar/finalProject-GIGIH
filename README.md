@@ -1,25 +1,23 @@
-# Rails on Replit
+## View Menu
 
-This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!
+Ketika memilih Menu di landing page, diperlihatkan isi tabel Menu
+beserta Nama Category yang diambil id nya sebagai foreign key.
+Show this menu berisi edit dan delete pada umumnya. Ketika klik
+Add Menu, kita menginput nama, harga, dan deskripsi untuk kategori
+yang dipilih. 
 
-This template was generated using `rails new` (after you install the `rails` gem from the packager sidebar) so you can always do that if you prefer to set it up from scratch. The only had two make config changes we had to make to run it on Replit:
+## View Orders
+Ketika memilih List Orders di landing page, diperlihatkan isi tabel
+Orders beserta Nama Customer, Menu yang pilih oleh Customer, dan
+terdapat status untuk menentukan pesanan baru, sedang diproses, dan
+pesanan yang dibatalkan. Ketika klik New Order, mengisi data pada
+umumnya dan untuk pelanggan baru, bisa klik daftar nama yang berada
+di paling bawah.
 
-- bind the app on `0.0.0.0` instead of `localhost` (see `.replit`)
-- allow `*.repl.co` hosts (see `config/environments/development.rb`)
-- allow the app to be iframed on `replit.com` (see `config/application.rb`)
+## View Category
+Ketika memilih Categories di landing page, diperlihatkan isi tabel
+Category dan bisa menambah Category baru
 
-## Running the app
-
-Simple hit run! You can edit the run command from the `.replit` file.
-
-## Running commands
-
-Start every command with `bundle exec` so that it runs in the context of the installed gems environment. The console pane will give you output from the server but you can run arbitrary command from the shell without stopping the server.
-
-## Database
-
-SQLite would work in development but we don't recommend running it in production. Instead look into using the built-in [Replit database](http://docs.replit.com/misc/database). Otherwise you are welcome to connect databases from your favorite provider. 
-
-## Help
-
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Alternatively you can [ask in the community](https://replit.com/talk/ask). Feel free to report bugs [here](https://replit.com/bugs) and give us feedback [here](https://Replit/feedback).
+## View Daily Report
+Ketika memilih Revenue di landing page, diperlihatkan Modal dengan
+isi nama dan email pelanggan yang telah memesan.

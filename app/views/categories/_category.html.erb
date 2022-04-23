@@ -1,7 +1,19 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+<div class="container">
+  <div id="<%= dom_id category %>">
 
+  <div class="card text-center">
+  <div class="card-header">
+    Category
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= category.name %></h5><br>
+    <div class="d-flex justify-content-center">
+      <div style="padding: 0 5px;">
+        <%= link_to "Back", categories_path, :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </div>
 </div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :home
+  root :to => "home#index"
   resources :categories
   resources :menus
   resources :orders
